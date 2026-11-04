@@ -237,23 +237,15 @@ Decision boundary (solid line) and margins (dashed lines) on both the training a
 \end{figure}
 
 \subsection*{Code}
-\begin{lstlisting}[language=Python]
-from sklearn.svm import SVC
+The complete script (data loading, both models, and the plotting routine that draws the
+decision boundary as a solid line and the margins as dashed lines) is shown in the screenshot
+below (filename \texttt{q2\_svm.py}):
 
-# Model 1: linear kernel, soft margin
-clf_lin = SVC(kernel='linear', C=1.0)
-clf_lin.fit(X_train, y_train)
-acc_lin = clf_lin.score(X_test, y_test)      # 0.5102
-
-# Model 2: RBF kernel, soft margin
-clf_rbf = SVC(kernel='rbf', C=1.0, gamma=2)
-clf_rbf.fit(X_train, y_train)
-acc_rbf = clf_rbf.score(X_test, y_test)      # 0.9184
-print(len(clf_rbf.support_))                 # 23 support vectors
-\end{lstlisting}
-
-The full plotting script (decision boundary + margins on both sets) is included as
-\texttt{q2\_svm.py}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\linewidth]{q2_code_shot.png}
+\caption*{Screenshot of the code used for Question 2.}
+\end{figure}
 
 %==================================================================
 \section*{Question 3: K-means and DBSCAN}
